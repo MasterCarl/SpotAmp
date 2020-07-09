@@ -1,0 +1,15 @@
+[Unit]
+# Human readable name of the unit
+Description=Amplifier
+
+[Service]
+# Command to execute when the service is started
+ExecStart=/usr/bin/python3.7 -u /usr/local/amplifier.py
+User=pi
+Environment=PYTHONUNBUFFERED=1
+SyslogIdentifier=amplifier
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=default.target
